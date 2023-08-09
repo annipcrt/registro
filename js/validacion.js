@@ -10,9 +10,9 @@ function tos() {
 }
 
 document.getElementById('regBtn').addEventListener('click', function() {
-    if (nombre === "" || apellido === "" || email === "" || password1 === "" || password2 === "" || !terminos) {
+    if (nombre === "" || apellido === "" || email === "" || password1 === "" || password2 === "" ) {
         showAlertError();}
-        
+
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
     if (password1 === password2 && tos()) {
