@@ -9,13 +9,18 @@ function tos() {
     return document.getElementById("terminos").checked;
 }
 
+function verificarLongitud() {
+    const clave = document.getElementById("password1").value;
+    return clave.length >= 6;
+}
+
 document.getElementById('regBtn').addEventListener('click', function() {
     if (nombre === "" || apellido === "" || email === "" || password1 === "" || password2 === "" || !terminos) {
         showAlertError();}
         
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
-    if (password1 === password2 && tos()) {
+    if (password1 === password2 && tos() && verificarLongitud()) {
         showAlertSuccess();
     } else {
         showAlertError();
