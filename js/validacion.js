@@ -14,16 +14,19 @@ function verificarLongitud() {
     return clave.length >= 6;
 }
 
-document.getElementById('regBtn').addEventListener('click', function() {
+
+function vertificarCampos(){
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;
     let email = document.getElementById("email").value;
-    if (nombre === "" || apellido === "" || email === "") {
-        showAlertError();}
+    return !(nombre === "" || apellido === "" || email === "") 
+         }
+document.getElementById('regBtn').addEventListener('click', function() {
+
         
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
-    if (password1 === password2 && tos() && verificarLongitud()) {
+    if (password1 === password2 && tos() && verificarLongitud() && vertificarCampos()) {
         showAlertSuccess();
     } else {
         showAlertError();
