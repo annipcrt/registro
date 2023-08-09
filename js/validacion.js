@@ -15,7 +15,10 @@ function verificarLongitud() {
 }
 
 document.getElementById('regBtn').addEventListener('click', function() {
-    if (nombre === "" || apellido === "" || email === "" || password1 === "" || password2 === "" || !terminos) {
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let email = document.getElementById("email").value;
+    if (nombre === "" || apellido === "" || email === "") {
         showAlertError();}
         
     var password1 = document.getElementById('password1').value;
